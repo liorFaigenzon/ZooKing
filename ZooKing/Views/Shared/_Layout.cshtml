@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+
+<iframe src='http://www.israelweather.co.il/weather_out.asp?code_width=250&height=200&code_color=white&code_font_color=black' width=250 height=200 dir=rtl name='in_frame' frameborder='1' scrolling='No'></iframe>
+                @RenderBody()
+       
+    <script>
+    var userRole = '@User.IsInRole("Admins")';
+    if (userRole =="True") {
+        alert("admin");
+        $('.Extra').css({ display: "normal" });
+    }
+    else
+    {
+        $('.Extra').css({ display:"none"});
+    }
+
+    </script> 
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
