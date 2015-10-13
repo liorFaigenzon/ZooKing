@@ -14,6 +14,8 @@ namespace ZooKing.DAL
         {
         }
 
+        public DbSet<Zoo> Zoos { get; set; }
+        public DbSet<Area> Areas { get; set; }
         public DbSet<Animal> Animals { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
