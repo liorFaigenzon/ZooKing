@@ -159,6 +159,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201510141457292_Initial.cs" />
+    <Compile Include="Migrations\201510141457292_Initial.Designer.cs">
+      <DependentUpon>201510141457292_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Animal.cs" />
     <Compile Include="Models\Area.cs" />
@@ -221,6 +226,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201510141457292_Initial.resx">
+      <DependentUpon>201510141457292_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
