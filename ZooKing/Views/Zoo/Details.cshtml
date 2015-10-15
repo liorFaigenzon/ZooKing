@@ -1,0 +1,50 @@
+﻿@model ZooKing.Models.Zoo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Zoo</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShortInfo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShortInfo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.YearOfEstablishment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YearOfEstablishment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Addres)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Addres)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
