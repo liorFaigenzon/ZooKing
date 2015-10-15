@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Web;
 
 namespace ZooKing.Models
 {
@@ -10,12 +12,16 @@ namespace ZooKing.Models
 
         [DisplayName("שם:")]
         [Required]
-        public int Name { get; set; }
+        public string Name { get; set; }
 
         [DisplayName("גודל:")]
         [Required]
         public int Size { get; set; }
 
+        public string Picture { get; set; }
+        [DisplayName("תמונה:")]
+        [NotMapped]
+        public HttpPostedFileBase PictureFileHandler { get; set; }
 
         public virtual ICollection<Animal> Animals{ get; set; }
 

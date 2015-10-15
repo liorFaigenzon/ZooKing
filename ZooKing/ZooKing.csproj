@@ -169,6 +169,10 @@
     <Compile Include="Migrations\201510141457292_Initial.Designer.cs">
       <DependentUpon>201510141457292_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201510150749394_PictureAdd.cs" />
+    <Compile Include="Migrations\201510150749394_PictureAdd.Designer.cs">
+      <DependentUpon>201510150749394_PictureAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Animal.cs" />
@@ -183,6 +187,10 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="App_Data\ZooKingContext.mdf" />
+    <Content Include="App_Data\ZooKingContext_log.ldf">
+      <DependentUpon>ZooKingContext.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -212,7 +220,6 @@
     <Content Include="Scripts\jquery-2.1.4.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Views\Admins\" />
   </ItemGroup>
   <ItemGroup>
@@ -236,6 +243,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201510141457292_Initial.resx">
       <DependentUpon>201510141457292_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510150749394_PictureAdd.resx">
+      <DependentUpon>201510150749394_PictureAdd.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

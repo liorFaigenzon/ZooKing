@@ -22,6 +22,23 @@ namespace ZooKing.DAL
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 
+           // modelBuilder.Entity<Zoo>()
+           //.HasMany(p => p.Areas);
+
+           // modelBuilder.Entity<Area>()
+           //   .HasRequired<Zoo>(x => x.Zoo);
+
+           // modelBuilder.Entity<Area>()
+           //    .HasKey(x => new {x.ID});
+
+           // modelBuilder.Entity<Area>()
+           //     .HasMany(p => p.Animals);
+
+           // modelBuilder.Entity<Animal>()
+           //     .HasKey(x => new {x.ID });
+
+           // modelBuilder.Entity<Animal>()
+           //     .HasRequired(x => x.Area);
 
 
             modelBuilder.Entity<IdentityUserLogin>().HasKey<string>(l => l.UserId);
