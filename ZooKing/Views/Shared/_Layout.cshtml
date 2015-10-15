@@ -13,7 +13,7 @@
         <iframe src='http://www.israelweather.co.il/weather_out.asp?code_width=250&height=200&code_color=white&code_font_color=black' width=250 height=200 dir=rtl name='in_frame' frameborder='1' scrolling='No'></iframe>
                 @RenderBody()
        
-    <script>
+    @*<script>
     var userRole = '@User.IsInRole("Admins")';
     if (userRole =="True") {
         alert("admin");
@@ -24,7 +24,7 @@
         $('.Extra').css({ display:"none"});
     }
 
-    </script> 
+    </script>*@ 
     @Scripts.Render("~/bundles/jquery")
     @RenderSection("scripts", required: false)
 </body>
