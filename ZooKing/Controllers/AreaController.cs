@@ -11,11 +11,13 @@ using ZooKing.DAL;
 
 namespace ZooKing.Controllers
 {
+    [Authorize(Roles = "Admins")]
     public class AreaController : Controller
     {
         private ZooKingContext db = new ZooKingContext();
 
         // GET: /Area/
+        [AllowAnonymous]
         public ActionResult Index()
         {
             var areas = db.Areas.Include(a => a.Zoo);
@@ -23,6 +25,7 @@ namespace ZooKing.Controllers
         }
 
         // GET: /Area/Details/5
+        [AllowAnonymous]
         public ActionResult Details(int? id)
         {
             if (id == null)

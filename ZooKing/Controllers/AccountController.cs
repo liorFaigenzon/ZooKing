@@ -11,7 +11,6 @@ using Microsoft.Owin.Security;
 using ZooKing.Models;
 using ZooKing.DAL;
 using System.Net.Http;
-using Zooking.Models;
 
 
 namespace ZooKing.Controllers

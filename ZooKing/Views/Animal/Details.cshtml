@@ -53,6 +53,8 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
+    <div class="Extra" style="display:inline-block">
+     @Html.ActionLink("ערוך", "Edit", new { id = Model.ID }) |
+    </div>
+     @Html.ActionLink("חזור", "Index")
 </p>

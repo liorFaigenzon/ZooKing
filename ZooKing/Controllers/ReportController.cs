@@ -11,17 +11,20 @@ using ZooKing.DAL;
 
 namespace ZooKing.Controllers
 {
+    [Authorize(Roles = "Admins")]
     public class ReportController : Controller
     {
         private ZooKingContext db = new ZooKingContext();
 
         // GET: /Report/
+        [AllowAnonymous]
         public ActionResult Index()
         {
             return View(db.Repors.ToList());
         }
 
         // GET: /Report/Details/5
+        [AllowAnonymous]
         public ActionResult Details(int? id)
         {
             if (id == null)
