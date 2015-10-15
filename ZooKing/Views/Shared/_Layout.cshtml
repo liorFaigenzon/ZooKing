@@ -9,24 +9,66 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
+    <div id="container-wrapper2">
+        <div id="container-wrapper">
+            <div id="container">
+                <header>
+                    picture of animals and shit
+                    <div>
+                        <nav>
+                            <!-- Navigation -->
+                            <ul>
+                                <li class="selected">@Html.ActionLink("גני חיות", "Index", "Zoo")</li>
+                                <li>@Html.ActionLink("חיות", "Index", "Animal")</li>
+                                <li>@Html.ActionLink("אזורים", "Index", "Area")</li>
+                                <li>@Html.ActionLink("חדשות", "Index", "Report")</li>
+                            </ul>
+                        </nav>
+                        <h1>News</h1>
+                        <p>Local and National News</p>
+                        <iframe src='http://www.israelweather.co.il/weather_out.asp?code_width=250&height=200&code_color=white&code_font_color=black' width=250 height=200 dir=rtl name='in_frame' frameborder='1' scrolling='No'></iframe>
+                    </div>
+                </header>
+                <div>
+                    <article>
+                        <section>@RenderBody()</section>
+                    </article>
+                    <aside>
+                        <section>
+                            קישורים לאתרים
+                            קישורים לחארתה בארטה
+                        </section>
+                    </aside>
+                </div>
+                <footer>
+                    <section>
+                        <nav>
+                            <!-- Navigation -->
+                            <ul>
+                                <li class="selected">@Html.ActionLink("מחירון", "Index", "Zoo")</li>
+                                <li>@Html.ActionLink("צור קשר", "Index", "Animal")</li>
+                                <li>@Html.ActionLink("אודות", "Index", "Area")</li>
+                            </ul>
+                        </nav>
+                        דפים סטטים(!!!!) של אודות פרטי התקשרות מחירון
+                    </section>
+                </footer>
+                </div>
+            </div>
+        </div>
+                @*<script>
+                    var userRole = '@User.IsInRole("Admins")';
+                    if (userRole =="True") {
+                        alert("admin");
+                        $('.Extra').css({ display: "normal" });
+                    }
+                    else
+                    {
+                        $('.Extra').css({ display:"none"});
+                    }
 
-        <iframe src='http://www.israelweather.co.il/weather_out.asp?code_width=250&height=200&code_color=white&code_font_color=black' width=250 height=200 dir=rtl name='in_frame' frameborder='1' scrolling='No'></iframe>
-                @RenderBody()
-       
-    @*<script>
-    var userRole = '@User.IsInRole("Admins")';
-    if (userRole =="True") {
-        alert("admin");
-        $('.Extra').css({ display: "normal" });
-    }
-    else
-    {
-        $('.Extra').css({ display:"none"});
-    }
-
-    </script>*@ 
-    @Scripts.Render("~/bundles/jquery")
-    @RenderSection("scripts", required: false)
+                    </script>*@
+                @Scripts.Render("~/bundles/jquery")
+                @RenderSection("scripts", required: false)
 </body>
 </html>
-

@@ -160,6 +160,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AnimalController.cs" />
     <Compile Include="Controllers\AreaController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\ZooController.cs" />
     <Compile Include="DAL\ZooKingContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -235,8 +236,14 @@
     <Content Include="Views\Animal\Details.cshtml" />
     <Content Include="Views\Animal\Edit.cshtml" />
     <Content Include="Views\Animal\Index.cshtml" />
+    <Content Include="Views\Report\Create.cshtml" />
+    <Content Include="Views\Report\Delete.cshtml" />
+    <Content Include="Views\Report\Details.cshtml" />
+    <Content Include="Views\Report\Edit.cshtml" />
+    <Content Include="Views\Report\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Images\" />
     <Folder Include="Views\Admins\" />
   </ItemGroup>
   <ItemGroup>
