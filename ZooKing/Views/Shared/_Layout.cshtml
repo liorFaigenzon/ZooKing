@@ -13,7 +13,11 @@
         <div id="container-wrapper">
             <div id="container">
                 <header>
-                    picture of animals and shit
+                    <div class="pics">
+                        <img id="s4" src="images/1.jpg" width="200" height="200" />
+                        <img src="images/2.jpg" width="200" height="200" />
+                        <img src="images/3.jpg" width="200" height="200" />
+                    </div> 
                     <div>
                         <nav>
                             <!-- Navigation -->
@@ -27,19 +31,25 @@
                         </nav>
                         <h1>News</h1>
                         <p>Local and National News</p>
-                        <iframe src='http://www.israelweather.co.il/weather_out.asp?code_width=250&height=200&code_color=white&code_font_color=black' width=250 height=200 dir=rtl name='in_frame' frameborder='1' scrolling='No'></iframe>
+                        @*<iframe src='http://www.israelweather.co.il/weather_out.asp?code_width=250&height=200&code_color=white&code_font_color=black' width=250 height=200 dir=rtl name='in_frame' frameborder='1' scrolling='No'></iframe>*@
                     </div>
                 </header>
-                <div>
-                    <article>
-                        <section>@RenderBody()</section>
-                    </article>
-                    <aside>
-                        <section>
-                            קישורים לאתרים
-                            קישורים לחארתה בארטה
-                        </section>
-                    </aside>
+                <div id="content">
+                    <main>
+                        <article>
+                            <section class="content-wrapper main-content clear-fix">
+                                <div id="mainContent">
+                                    @RenderBody()
+                                </div>
+                            </section>
+                        </article>
+                        <aside>
+                            <section>
+                                קישורים לאתרים
+                                קישורים לחארתה בארטה
+                            </section>
+                        </aside>
+                    </main>
                 </div>
                 <footer>
                     <section>
@@ -57,7 +67,16 @@
                 </div>
             </div>
         </div>
-                @*<script>
+    <script>
+        $('#s4').cycle({
+            fx:      'scrollDown',
+            speed:    300,
+            timeout: 2000,
+            pause: 1,
+            random: 1
+        });
+    </script>
+        @*<script>
                     var userRole = '@User.IsInRole("Admins")';
                     if (userRole =="True") {
                         alert("admin");
@@ -69,7 +88,7 @@
                     }
 
                     </script>*@
-                @Scripts.Render("~/bundles/jquery")
-                @RenderSection("scripts", required: false)
-</body>
-</html>
+        @Scripts.Render("~/bundles/jquery")
+        @RenderSection("scripts", required: false)
+        </body>
+        </html>
