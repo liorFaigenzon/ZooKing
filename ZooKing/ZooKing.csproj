@@ -8,7 +8,7 @@
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{1713B643-8D87-4762-945E-98CD49FAC6A6}</ProjectGuid>
-    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ZooKing</RootNamespace>
@@ -27,6 +27,7 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>12.0</OldToolsVersion>
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -177,10 +178,12 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Animal.cs" />
+    <Compile Include="Models\AnimalAreaViewModel.cs" />
     <Compile Include="Models\Area.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Report.cs" />
     <Compile Include="Models\Zoo.cs" />
+    <Compile Include="Models\ZooAreaViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -246,6 +249,9 @@
     <Content Include="Views\Report\Details.cshtml" />
     <Content Include="Views\Report\Edit.cshtml" />
     <Content Include="Views\Report\Index.cshtml" />
+    <Content Include="Views\Animal\GroupBy.cshtml" />
+    <Content Include="Views\Animal\AnimalInArea.cshtml" />
+    <Content Include="Views\Area\AreaAndZoo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Admins\" />

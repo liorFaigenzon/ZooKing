@@ -18,9 +18,26 @@ namespace ZooKing.Controllers
 
         // GET: /Zoo/
         [AllowAnonymous]
-        public ActionResult Index()
+        public ActionResult Index(string name, string address, string info)
         {
-            return View(db.Zoos.ToList());
+            var zoos = db.Zoos.Where(zoo => true);
+
+            if (!String.IsNullOrEmpty(name))
+            {
+                zoos = zoos.Where(zoo => zoo.Name == name);
+            }
+
+            if (!String.IsNullOrEmpty(address))
+            {
+                zoos = zoos.Where(zoo => zoo.Addres == address);
+            }
+
+            if(!String.IsNullOrEmpty(info))
+            {
+                zoos = zoos.Where(zoo => zoo.ShortInfo == info);
+            }
+
+            return View(zoos.ToList());
         }
 
         // GET: /Zoo/Details/5

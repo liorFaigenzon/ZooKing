@@ -1,0 +1,45 @@
+﻿@model IEnumerable<ZooKing.Models.ZooAreaViewModel>
+
+@{
+    ViewBag.Title = "Area And Zoo";
+}
+
+<h2>Index</h2>
+
+<div class="Extra" style="display:inline-block">
+</div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AreaName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AreaSize)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ZooName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ZooShortInfo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AreaName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AreaSize)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ZooName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ZooShortInfo)
+        </td>
+    </tr>
+}
+
+</table>

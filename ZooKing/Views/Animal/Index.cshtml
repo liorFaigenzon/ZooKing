@@ -9,53 +9,72 @@
 <div class="Extra" style="display:inline-block">
     <p>
         @Html.ActionLink("Create New", "Create")
-    </p>
-</div>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Area.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Age)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Type)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Picture)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Area.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Age)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Type)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Picture)
-        </td>
-        <td>
-            @Html.ActionLink("פרטים", "Details", new { id = item.ID })
-            <div class="Extra" style="display:inline-block"> |
-                @Html.ActionLink("ערוך", "Edit", new { id = item.ID }) |
-                @Html.ActionLink("מחק", "Delete", new { id = item.ID })
-            </div>
-        </td>
-    </tr>
-}
+        @using (Html.BeginForm())
+        {
+        <p>
+            Age: @Html.TextBox("age") <br />
+            Type: @Html.TextBox("Type") <br />
+            Name: @Html.TextBox("Name") <br />
+            <br />
+            <input type="submit" value="Filter" />
 
-</table>
+            <br />
+            @Html.ActionLink("קבץ", "GroupBy", 1 )
+        </p>
+        }
+        </p>
+    </div>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Area.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Picture)
+            </th>
+            <th></th>
+        </tr>
+
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Area.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Age)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Picture)
+                </td>
+                <td>
+                    @Html.ActionLink(" האזור של החיה", "AnimalInArea", new { id = item.ID })
+                    @Html.ActionLink("פרטים", "Details", new { id = item.ID })
+                    <div class="Extra" style="display:inline-block">
+                        |
+                        @Html.ActionLink("ערוך", "Edit", new { id = item.ID }) |
+                        @Html.ActionLink("מחק", "Delete", new { id = item.ID })
+                    </div>
+                </td>
+            </tr>
+
+        }
+
+    </table>

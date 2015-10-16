@@ -18,11 +18,49 @@ namespace ZooKing.Controllers
 
         // GET: /Animal/
         [AllowAnonymous]
-        public ActionResult Index()
+        public ActionResult Index(int? age, string name, int? type)
         {
             var animals = db.Animals.Include(a => a.Area);
+
+            if (age.HasValue)
+            {
+                animals = animals.Where(animal => animal.Age == age);
+            }
+
+            if (!String.IsNullOrEmpty(name))
+            {
+                animals = animals.Where(animal => animal.Name == name);
+            }
+
+            if (type.HasValue)
+            {
+                animals = animals.Where(animal => animal.Type == type);
+            }
+
             return View(animals.ToList());
         }
+
+        // GET: /Animal/
+        [AllowAnonymous]
+        public ActionResult GroupBy(int? type)
+        {
+            var animals = db.Animals.Include(a => a.Area);
+
+            return View(animals);
+        }
+
+        [AllowAnonymous]
+        public ActionResult AnimalInArea(int? animalId)
+        {
+            var query = from area in db.Areas
+                        join animal in db.Animals.Where(x => x.ID == animalId) on area.ID equals animal.AreaID
+                        select new AnimalAreaViewModel
+                        { AreaName = area.Name, AreaSize = area.Size, AnimalAge = animal.Age, AnimalName = animal.Name, AnimalId = animal.ID };
+
+            return View(query);
+        }
+
+
 
         // GET: /Animal/Details/5
         [AllowAnonymous]

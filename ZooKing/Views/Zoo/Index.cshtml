@@ -9,6 +9,16 @@
 <div class="Extra" style="display:inline-block">
     <p>
         @Html.ActionLink("צור חדש", "Create")
+
+        @using (Html.BeginForm())
+        {
+        <p>
+            Name: @Html.TextBox("Name") <br />
+            Address: @Html.TextBox("Address") <br />
+            Info: @Html.TextBox("Info") <br />
+            <input type="submit" value="Filter" />
+        </p>
+        } 
     </p>
 </div>
 <table class="table">

@@ -24,6 +24,18 @@ namespace ZooKing.Controllers
             return View(areas.ToList());
         }
 
+        // GET: /Area/
+        [AllowAnonymous]
+        public ActionResult AreaAndZoo(int? areaId)
+        {
+            var query = from zoo in db.Zoos
+                        join area in db.Areas.Where(x => x.ID == areaId) on zoo.ID equals area.ZooID
+                        select new ZooAreaViewModel
+                        {AreaName = area.Name, AreaSize = area.Size, ZooName = zoo.Name, ZooShortInfo = zoo.ShortInfo};
+
+            return View(query);
+        }
+
         // GET: /Area/Details/5
         [AllowAnonymous]
         public ActionResult Details(int? id)
