@@ -114,6 +114,23 @@ namespace ZooKing.Controllers
             if (ModelState.IsValid)
             {
                 db.Entry(area).State = EntityState.Modified;
+
+                try
+                {
+                    // new picture saving
+                    if (area.PictureFileHandler != null)
+                    {
+                        string pic = System.IO.Path.GetFileName(area.PictureFileHandler.FileName);
+                        string pathPic = System.IO.Path.Combine(
+                                               Server.MapPath("~/Upload"), pic);
+                        area.PictureFileHandler.SaveAs(pathPic);
+                        area.Picture = "../Upload/" + pic;
+                    }
+                }
+                catch (Exception)
+                {
+                }
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

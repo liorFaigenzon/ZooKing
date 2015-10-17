@@ -144,6 +144,18 @@ namespace ZooKing.Controllers
                 return HttpNotFound();
             }
             ViewBag.AreaID = new SelectList(db.Areas, "ID", "Name", animal.AreaID);
+
+            //
+            //if (animal.PictureFileHandler != null)
+            //{
+            //    string pic = System.IO.Path.GetFileName(animal.PictureFileHandler.FileName);
+            //    string pathPic = System.IO.Path.Combine(
+            //                           Server.MapPath("~/Upload"), pic);
+            //    animal.PictureFileHandler.SaveAs(pathPic);
+            //    animal.Picture = "../Upload/" + pic;
+            //}
+            //
+
             return View(animal);
         }
 
@@ -157,6 +169,20 @@ namespace ZooKing.Controllers
             if (ModelState.IsValid)
             {
                 db.Entry(animal).State = EntityState.Modified;
+
+                try
+                {
+                    // To save the new picture
+                    string pic = System.IO.Path.GetFileName(animal.PictureFileHandler.FileName);
+                    string pathPic = System.IO.Path.Combine(
+                                           Server.MapPath("~/Upload"), pic);
+                    animal.PictureFileHandler.SaveAs(pathPic);
+                    animal.Picture = "../Upload/" + pic;
+                }
+                catch (Exception)
+                {
+                }
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
