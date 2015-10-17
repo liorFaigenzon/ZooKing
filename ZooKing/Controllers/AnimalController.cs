@@ -16,6 +16,24 @@ namespace ZooKing.Controllers
     {
         private ZooKingContext db = new ZooKingContext();
 
+        [AllowAnonymous]
+        public PartialViewResult GetAgeAvg()
+        {
+            var animals = db.Animals.Include(a => a.Area);
+
+            var avg = animals.Average(animal => animal.Age);
+
+            return PartialView(avg);
+        }
+
+        [AllowAnonymous]
+        public PartialViewResult GetAnimals()
+        {
+            Animal[] animals = db.Animals.ToArray();
+
+            return PartialView(animals);
+        }
+
         // GET: /Animal/
         [AllowAnonymous]
         public ActionResult Index(int? age, string name, int? type)

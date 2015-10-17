@@ -24,6 +24,8 @@
         }
 
     @Html.ActionLink("Create New", "Create")
+    <input id="btnAjax" name="btnAjax" type="button" value="Get Avg" />
+    <div id="avg"></div>
 
 
         </p>
@@ -81,3 +83,25 @@
         }
 
     </table>
+
+
+
+@section Scripts {
+    <script>
+    $('#btnAjax').click(function () {
+        $.ajax({
+            url: '/Animal/GetAnimals',
+            contentType: 'application/html; charset=utf-8',
+            type: 'GET',
+            dataType: 'html'
+
+        })
+        .success(function (result) {
+            $('#avg').html(result);
+        })
+        .error(function (xhr, status) {
+            alert(status);
+        })
+    });
+    </script>
+}
