@@ -42,7 +42,7 @@
             @Html.DisplayFor(modelItem => item.Picture)
         </td>
         <td>
-            @Html.ActionLink(" גן החיות", "AreaAndZoo", new { id = item.ID })
+            @Html.ActionLink(" גן החיות", "AreaAndZoo", new { id = item.ID }) |
             @Html.ActionLink("פרטים", "Details", new { id = item.ID })
             <div class="Extra" style="display:inline-block">|
                 @Html.ActionLink("ערוך", "Edit", new { id = item.ID }) |

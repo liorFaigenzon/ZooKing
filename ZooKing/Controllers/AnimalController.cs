@@ -50,10 +50,10 @@ namespace ZooKing.Controllers
         }
 
         [AllowAnonymous]
-        public ActionResult AnimalInArea(int? animalId)
+        public ActionResult AnimalInArea(int? Id)
         {
             var query = from area in db.Areas
-                        join animal in db.Animals.Where(x => x.ID == animalId) on area.ID equals animal.AreaID
+                        join animal in db.Animals.Where(x => x.ID == Id) on area.ID equals animal.AreaID
                         select new AnimalAreaViewModel
                         { AreaName = area.Name, AreaSize = area.Size, AnimalAge = animal.Age, AnimalName = animal.Name, AnimalId = animal.ID };
 

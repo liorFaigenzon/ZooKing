@@ -26,10 +26,12 @@ namespace ZooKing.Controllers
 
         // GET: /Area/
         [AllowAnonymous]
-        public ActionResult AreaAndZoo(int? areaId)
+        public ActionResult AreaAndZoo(int? Id)
         {
+            System.Diagnostics.Debug.Write(Id);
+            //db.Areas.Where(x => x.ID == areaId)
             var query = from zoo in db.Zoos
-                        join area in db.Areas.Where(x => x.ID == areaId) on zoo.ID equals area.ZooID
+                        join area in db.Areas.Where(x => x.ID == Id) on zoo.ID equals area.ZooID
                         select new ZooAreaViewModel
                         {AreaName = area.Name, AreaSize = area.Size, ZooName = zoo.Name, ZooShortInfo = zoo.ShortInfo};
 
