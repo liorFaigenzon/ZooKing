@@ -31,7 +31,7 @@ margin: auto;
 }
 
 .pics {  
-    display: inline;
+    display: table-cell; 
     height:  232px;  
     width:   232px;  
     padding: 6px;  

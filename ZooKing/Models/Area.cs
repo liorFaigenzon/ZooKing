@@ -10,7 +10,7 @@ namespace ZooKing.Models
     {
         public int ID { get; set; }
 
-        [DisplayName("שם:")]
+        [DisplayName("שם האוזר:")]
         [Required]
         public string Name { get; set; }
 

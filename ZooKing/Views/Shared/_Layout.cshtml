@@ -6,6 +6,7 @@
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    @Styles.Render("~/bundle/bootstrap-styles ")  
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jqueryCycle")
@@ -25,20 +26,32 @@
         <div id="container-wrapper">
             <div id="container">
                 <header>
-                    <div class="pics">
-                        <img id="s1" src="images/1.jpg" width="200" height="200" />
-                        <img id="s2" src="images/2.jpg" width="200" height="200" />
-                        <img id="s3" src="images/3.jpg" width="200" height="200" />
-                    </div> 
+                    <div id="pictures" >
+                        <div id="s1" class="pics">
+                            <img src="images/1.jpg" width="200" height="200" />
+                            <img src="images/2.jpg" width="200" height="200" />
+                            <img src="images/3.jpg" width="200" height="200" />
+                        </div>
+                        <div id="s2" class="pics">
+                            <img src="images/1.jpg" width="200" height="200" />
+                            <img src="images/2.jpg" width="200" height="200" />
+                            <img src="images/3.jpg" width="200" height="200" />
+                        </div>
+                        <div id="s3" class="pics">
+                            <img src="images/1.jpg" width="200" height="200" />
+                            <img src="images/2.jpg" width="200" height="200" />
+                            <img src="images/3.jpg" width="200" height="200" />
+                        </div>
+                    </div>
                     <div>
                         <nav>
                             <!-- Navigation -->
                             <ul>
-                                <li class="selected">@Html.ActionLink("גני חיות", "Index", "Zoo")</li>
-                                <li>@Html.ActionLink("חיות", "Index", "Animal")</li>
-                                <li>@Html.ActionLink("אזורים", "Index", "Area")</li>
-                                <li>@Html.ActionLink("חדשות", "Index", "Report")</li>
-                                <li>@Html.ActionLink("התחברות", "Login", "Account")</li>
+                                <li class="selected">@Html.ActionLink("גני חיות", "Index", "Zoo", null, new { @class = "btn btn-primary" })</li>
+                                <li>@Html.ActionLink("חיות", "Index", "Animal", null, new { @class = "btn btn-primary" })</li>
+                                <li>@Html.ActionLink("אזורים", "Index", "Area", null, new { @class = "btn btn-primary" })</li>
+                                <li>@Html.ActionLink("חדשות", "Index", "Report", null, new { @class = "btn btn-primary" })</li>
+                                <li>@Html.ActionLink("התחברות", "Login", "Account", null, new { @class = "btn btn-primary" })</li>
                             </ul>
                         </nav>
                         <h1>News</h1>
@@ -69,9 +82,9 @@
                         <nav>
                             <!-- Navigation -->
                             <ul>
-                                <li class="selected">@Html.ActionLink("מחירון", "Index", "Zoo")</li>
-                                <li>@Html.ActionLink("צור קשר", "Index", "Animal")</li>
-                                <li>@Html.ActionLink("אודות", "Index", "Area")</li>
+                                <li class="selected">@Html.ActionLink("מחירון", "Index", "Zoo", null, new { @class = "btn btn-primary" })</li>
+                                <li>@Html.ActionLink("צור קשר", "Index", "Animal", null, new { @class = "btn btn-primary" })</li>
+                                <li>@Html.ActionLink("אודות", "Index", "Area", null, new { @class = "btn btn-primary" })</li>
                             </ul>
                         </nav>
                         דפים סטטים(!!!!) של אודות פרטי התקשרות מחירון
@@ -81,9 +94,9 @@
             </div>
         </div>
     <script>
-        $('#s3').cycle({
-            fx:      'scrollDown',
-            speed:    300,
+        $('#s1').cycle({
+            fx: 'scrollDown',
+            speed: 300,
             timeout: 2000,
             pause: 1,
             random: 1
@@ -95,7 +108,7 @@
             pause: 1,
             random: 1
         });
-        $('#s1').cycle({
+        $('#s3').cycle({
             fx: 'scrollDown',
             speed: 300,
             timeout: 2000,
