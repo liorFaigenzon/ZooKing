@@ -8,7 +8,6 @@
 
 <div class="Extra" style="display:inline-block">
     <p>
-        @Html.ActionLink("צור חדש", "Create")
 
         @using (Html.BeginForm())
         {
@@ -19,6 +18,9 @@
             <input type="submit" value="Filter" />
         </p>
         } 
+
+    @Html.ActionLink("צור חדש", "Create")    
+
     </p>
 </div>
 <table class="table">

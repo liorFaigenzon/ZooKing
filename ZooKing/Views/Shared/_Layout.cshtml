@@ -7,6 +7,17 @@
     <meta name="viewport" content="width=device-width" />
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("img").animate({
+                    height: 'toggle'
+                });
+            });
+        });
+    </script> 
 </head>
 <body>
     <div id="container-wrapper2">
@@ -48,6 +59,7 @@
                                 קישורים לחארתה בארטה
                             </section>
                             <iframe src='http://www.israelweather.co.il/weather_out.asp?code_width=250&height=200&code_color=white&code_font_color=black' width=250 height=200 dir=rtl name='in_frame' frameborder='1' scrolling='No'></iframe>
+                            <button>Change pictures Size</button>
                         </aside>
                     </main>
                 </div>

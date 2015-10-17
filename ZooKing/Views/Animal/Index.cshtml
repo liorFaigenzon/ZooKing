@@ -8,7 +8,6 @@
 
 <div class="Extra" style="display:inline-block">
     <p>
-        @Html.ActionLink("Create New", "Create")
 
         @using (Html.BeginForm())
         {
@@ -19,10 +18,14 @@
             <br />
             <input type="submit" value="Filter" />
 
-            <br />
-            @Html.ActionLink("קבץ", "GroupBy", 1 )
+            <br /> 
+            @Html.ActionLink("קבץ", "GroupBy", 1 )  
         </p>
         }
+
+    @Html.ActionLink("Create New", "Create")
+
+
         </p>
     </div>
     <table class="table">
