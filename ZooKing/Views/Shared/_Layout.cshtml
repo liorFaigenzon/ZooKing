@@ -5,10 +5,11 @@
     <title>@ViewBag.Title - My ASP.NET MVC Application</title>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    @Scripts.Render("~/bundles/jqueryCycle")
+    
     <script>
         $(document).ready(function () {
             $("button").click(function () {
@@ -25,9 +26,9 @@
             <div id="container">
                 <header>
                     <div class="pics">
-                        <img id="s4" src="images/1.jpg" width="200" height="200" />
-                        <img src="images/2.jpg" width="200" height="200" />
-                        <img src="images/3.jpg" width="200" height="200" />
+                        <img id="s1" src="images/1.jpg" width="200" height="200" />
+                        <img id="s2" src="images/2.jpg" width="200" height="200" />
+                        <img id="s3" src="images/3.jpg" width="200" height="200" />
                     </div> 
                     <div>
                         <nav>
@@ -80,26 +81,41 @@
             </div>
         </div>
     <script>
-        $('#s4').cycle({
+        $('#s3').cycle({
             fx:      'scrollDown',
             speed:    300,
             timeout: 2000,
             pause: 1,
             random: 1
         });
-    </script>
-        @*<script>
-                    var userRole = '@User.IsInRole("Admins")';
-                    if (userRole =="True") {
-                        alert("admin");
-                        $('.Extra').css({ display: "normal" });
-                    }
-                    else
-                    {
-                        $('.Extra').css({ display:"none"});
-                    }
+        $('#s2').cycle({
+            fx: 'scrollDown',
+            speed: 300,
+            timeout: 2000,
+            pause: 1,
+            random: 1
+        });
+        $('#s1').cycle({
+            fx: 'scrollDown',
+            speed: 300,
+            timeout: 2000,
+            pause: 1,
+            random: 1
+        });
+   </script>
+    <script>
+        var userRole = '@User.IsInRole("Admins")';
+        if (userRole =="True") {
+            alert("admin");
+            $('.Extra').css({ display: "normal" });
+        }
+        else
+        {
+            $('.Extra').css({ display:"none"});
+        }
 
-                    </script>*@
+    </script>
+     
         @Scripts.Render("~/bundles/jquery")
         @RenderSection("scripts", required: false)
         </body>

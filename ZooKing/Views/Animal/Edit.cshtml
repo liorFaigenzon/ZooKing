@@ -44,6 +44,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Picture, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
+                <img src=@Html.DisplayFor(modelItem => modelItem.Picture) alt="" style="width:267px;height:267px;">
                 @Html.EditorFor(model => model.Picture)
                 @Html.ValidationMessageFor(model => model.Picture)
             </div>

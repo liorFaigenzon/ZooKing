@@ -15,6 +15,9 @@ namespace ZooKing
            .Include("~/Content/bootstrap-theme.css")
            .Include("~/Content/Site.css"));
 
+            bundles.Add(new ScriptBundle("~/bundles/jqueryCycle").Include(
+                        "~/Scripts/jquery_cycle.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 

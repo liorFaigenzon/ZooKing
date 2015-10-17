@@ -217,6 +217,7 @@
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
+    <Content Include="Scripts\jquery_cycle.js" />
     <Content Include="Upload\AutoResponder.xml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

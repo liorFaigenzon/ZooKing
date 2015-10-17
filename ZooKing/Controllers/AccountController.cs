@@ -87,7 +87,7 @@ namespace ZooKing.Controllers
                 if (result.Succeeded)
                 {
                     await SignInAsync(user, isPersistent: false);
-                    return RedirectToAction("Index", "Active");
+                    return RedirectToAction("Index", "Report");
                 }
                 else
                 {
@@ -294,7 +294,7 @@ namespace ZooKing.Controllers
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut();
-            return RedirectToAction("Index", "Active");
+            return RedirectToAction("Index", "Report");
         }
 
         //
@@ -376,7 +376,7 @@ namespace ZooKing.Controllers
             }
             else
             {
-                return RedirectToAction("Index", "Active");
+                return RedirectToAction("Index", "Report");
             }
         }
 

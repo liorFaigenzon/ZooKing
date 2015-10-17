@@ -22,13 +22,13 @@
             @Html.ActionLink("קבץ", "GroupBy", 1 )  
         </p>
         }
-
+    <p>
     @Html.ActionLink("Create New", "Create")
     <input id="btnAjax" name="btnAjax" type="button" value="Get Avg" />
     <div id="avg"></div>
 
 
-        </p>
+     </p>
     </div>
     <table class="table">
         <tr>
@@ -67,7 +67,7 @@
                     @Html.DisplayFor(modelItem => item.Type)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Picture)
+                    <img src=@Html.DisplayFor(modelItem => item.Picture) alt="" style="width:267px;height:267px;">
                 </td>
                 <td>
                     @Html.ActionLink(" האזור של החיה", "AnimalInArea", new { id = item.ID })
