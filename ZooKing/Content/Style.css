@@ -42,8 +42,8 @@ margin: auto;
     padding: 15px;  
     border:  1px solid #ccc;  
     background-color: #eee;  
-    width: 29%;
-    height: 200px; 
+    width: auto;
+    height: 232px; 
     top:  0; 
     left: 0 
 } 
@@ -120,10 +120,6 @@ footer {
         padding: 5px 0px;
     }
 
-        footer p {
-            margin: 0;
-        }
-
 
 /* styles for validation helpers */
 .field-validation-error {
@@ -155,4 +151,11 @@ input[type="checkbox"].input-validation-error {
 
 .Exstra{
     display:none;
+}
+
+th{
+    text-align:right;
+}
+.col-md-2{
+    float:right;
 }

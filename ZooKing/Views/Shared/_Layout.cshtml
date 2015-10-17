@@ -21,26 +21,31 @@
         });
     </script> 
 </head>
-<body>
+<body >
     <div id="container-wrapper2">
         <div id="container-wrapper">
             <div id="container">
                 <header>
                     <div id="pictures" >
                         <div id="s1" class="pics">
-                            <img src="images/1.jpg" width="200" height="200" />
-                            <img src="images/2.jpg" width="200" height="200" />
-                            <img src="images/3.jpg" width="200" height="200" />
+                            <img src="images/1.jpg"/>
+                            <img src="images/2.jpg"/>
+                            <img src="images/3.jpg"/>
                         </div>
                         <div id="s2" class="pics">
-                            <img src="images/1.jpg" width="200" height="200" />
-                            <img src="images/2.jpg" width="200" height="200" />
-                            <img src="images/3.jpg" width="200" height="200" />
+                            <img src="images/1.jpg" />
+                            <img src="images/2.jpg" />
+                            <img src="images/3.jpg" />
                         </div>
                         <div id="s3" class="pics">
-                            <img src="images/1.jpg" width="200" height="200" />
-                            <img src="images/2.jpg" width="200" height="200" />
-                            <img src="images/3.jpg" width="200" height="200" />
+                            <img src="images/1.jpg" />
+                            <img src="images/2.jpg" />
+                            <img src="images/3.jpg" />
+                        </div>
+                        <div id="s4" class="pics">
+                            <img src="images/1.jpg" />
+                            <img src="images/2.jpg" />
+                            <img src="images/3.jpg" />
                         </div>
                     </div>
                     <div>
@@ -78,17 +83,14 @@
                     </main>
                 </div>
                 <footer>
-                    <section>
-                        <nav>
-                            <!-- Navigation -->
-                            <ul>
-                                <li class="selected">@Html.ActionLink("מחירון", "Index", "Zoo", null, new { @class = "btn btn-primary" })</li>
-                                <li>@Html.ActionLink("צור קשר", "Index", "Animal", null, new { @class = "btn btn-primary" })</li>
-                                <li>@Html.ActionLink("אודות", "Index", "Area", null, new { @class = "btn btn-primary" })</li>
-                            </ul>
-                        </nav>
-                        דפים סטטים(!!!!) של אודות פרטי התקשרות מחירון
-                    </section>
+                    <nav>
+                        <!-- Navigation -->
+                        <ul>
+                            <li class="selected">@Html.ActionLink("מחירון", "Index", "Zoo", null, new { @class = "btn btn-primary" })</li>
+                            <li>@Html.ActionLink("צור קשר", "Index", "Animal", null, new { @class = "btn btn-primary" })</li>
+                            <li>@Html.ActionLink("אודות", "Index", "Area", null, new { @class = "btn btn-primary" })</li>
+                        </ul>
+                    </nav>
                 </footer>
                 </div>
             </div>
@@ -96,21 +98,28 @@
     <script>
         $('#s1').cycle({
             fx: 'scrollDown',
-            speed: 300,
+            speed: 3000,
             timeout: 2000,
             pause: 1,
             random: 1
         });
         $('#s2').cycle({
             fx: 'scrollDown',
-            speed: 300,
+            speed: 2500,
             timeout: 2000,
             pause: 1,
             random: 1
         });
         $('#s3').cycle({
             fx: 'scrollDown',
-            speed: 300,
+            speed: 2000,
+            timeout: 2000,
+            pause: 1,
+            random: 1
+        });
+        $('#s4').cycle({
+            fx: 'scrollDown',
+            speed: 3000,
             timeout: 2000,
             pause: 1,
             random: 1
@@ -119,7 +128,6 @@
     <script>
         var userRole = '@User.IsInRole("Admins")';
         if (userRole =="True") {
-            alert("admin");
             $('.Extra').css({ display: "normal" });
         }
         else
