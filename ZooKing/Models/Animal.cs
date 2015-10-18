@@ -17,7 +17,7 @@ namespace ZooKing.Models
         [DisplayName("גיל:")]
         [Required]
         public int Age { get; set; }
-        public int Type { get; set; }
+        public string Type { get; set; }
         [DisplayName("תמונה:")]
         public string Picture { get; set; }
         [DisplayName("תמונה:")]

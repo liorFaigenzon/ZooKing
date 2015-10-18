@@ -52,7 +52,7 @@ namespace ZooKing.Controllers
 
             if (type.HasValue)
             {
-                animals = animals.Where(animal => animal.Type == type);
+                animals = animals.Where(animal => animal.Type == type.ToString());
             }
 
             return View(animals.ToList());
