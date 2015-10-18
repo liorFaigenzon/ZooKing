@@ -109,7 +109,7 @@ namespace ZooKing.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="ID,Name,Size,Picture,ZooID")] Area area)
+        public ActionResult Edit([Bind(Include= "ID,Name,Size,PictureFileHandler,ZooID")] Area area)
         {
             if (ModelState.IsValid)
             {

@@ -23,6 +23,15 @@ margin: auto;
   padding:  0 0 40px 0;
   text-align:right;
 }
+/**/
+@font-face {
+    font-family: myFirstFont;
+    src: url(Sansation_Light.ttf);
+}
+
+div {
+    font-family: myFirstFont;
+}
 
 .banner {
   background-color: white;
@@ -35,7 +44,10 @@ margin: auto;
     height:  232px;  
     width:   232px;  
     padding: 6px;  
-    margin:  0;  
+    margin:  0; 
+/**/
+    -webkit-column-gap: 5px;
+    column-gap: 5px;  
 } 
  
 .pics img {  
@@ -44,8 +56,6 @@ margin: auto;
     background-color: #eee;  
     width: auto;
     height: 232px; 
-    top:  0; 
-    left: 0 
 } 
 
 body {
@@ -57,10 +67,27 @@ body {
     direction:rtl;
  } 
 
-nav {
+#transitionMan {
+    width: 100px;
+    height: 100px;
+    background: green;
+    -webkit-transition: width 2s, height 4s; /* For Safari 3.1 to 6.0 */
+    transition: width 2s, height 4s;
+}
+
+#transitionMan:hover {
+    width: 300px;
+    height: 300px;
+}
+div{
+    text-shadow: 2px 2px green;
+}
+nav {/**/
   background-color: #99CC53;
   padding: 5px;
   margin-top: 1px;
+  border: 3px solid;
+  border-radius: 25px;
 }
 
 li a {
@@ -155,6 +182,7 @@ input[type="checkbox"].input-validation-error {
 
 th{
     text-align:right;
+
 }
 .col-md-2{
     float:right;
