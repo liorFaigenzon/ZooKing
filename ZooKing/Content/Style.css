@@ -79,7 +79,7 @@ body {
     width: 300px;
     height: 300px;
 }
-div{
+#News{
     text-shadow: 2px 2px green;
 }
 nav {/**/
@@ -187,3 +187,7 @@ th{
 .col-md-2{
     float:right;
 }
+
+/*col-md-offset-2 col-md-10{
+    float:right;
+}*/

@@ -10,16 +10,7 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jqueryCycle")
-    
-    <script>
-        $(document).ready(function () {
-            $("button").click(function () {
-                $("img").animate({
-                    height: 'toggle'
-                });
-            });
-        });
-    </script> 
+    @Scripts.Render("~/bundles/jqueryOurs")
 </head>
 <body >
     <div id="container-wrapper2">
@@ -79,7 +70,7 @@
                                 קישורים לאתרים
                                 קישורים לחארתה בארטה
                             </section>
-                            <iframe src='http://www.israelweather.co.il/weather_out.asp?code_width=250&height=200&code_color=white&code_font_color=black' width=250 height=200 dir=rtl name='in_frame' frameborder='1' scrolling='No'></iframe>
+                            <iframe src='http://www.israelweather.co.il/weather_out.asp?code_width=219&height=200&code_color=white&code_font_color=black' width=219 height=200 dir=rtl name='in_frame' frameborder='1' scrolling='No'></iframe>
                             <button>Change pictures Size</button>
                             <div id="transitionMan">
 
@@ -99,49 +90,7 @@
                 </footer>
                 </div>
             </div>
-        </div>
-    <script>
-        $('#s1').cycle({
-            fx: 'scrollDown',
-            speed: 3000,
-            timeout: 2000,
-            pause: 1,
-            random: 1
-        });
-        $('#s2').cycle({
-            fx: 'scrollDown',
-            speed: 2500,
-            timeout: 2000,
-            pause: 1,
-            random: 1
-        });
-        $('#s3').cycle({
-            fx: 'scrollDown',
-            speed: 2000,
-            timeout: 2000,
-            pause: 1,
-            random: 1
-        });
-        $('#s4').cycle({
-            fx: 'scrollDown',
-            speed: 3000,
-            timeout: 2000,
-            pause: 1,
-            random: 1
-        });
-   </script>
-    <script>
-        var userRole = '@User.IsInRole("Admins")';
-        if (userRole =="True") {
-            $('.Extra').css({ display: "normal" });
-        }
-        else
-        {
-            $('.Extra').css({ display:"none"});
-        }
-
-    </script>
-     
+        </div>    
         @Scripts.Render("~/bundles/jquery")
         @RenderSection("scripts", required: false)
         </body>

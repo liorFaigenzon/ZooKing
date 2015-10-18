@@ -221,11 +221,12 @@
     <Content Include="Images\sea_horse.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Sansation_Light.ttf" />
+    <Content Include="Content\Sansation_Light.ttf" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
     <Content Include="Scripts\jquery_cycle.js" />
+    <Content Include="Scripts\Ours.js" />
     <Content Include="Upload\AutoResponder.xml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -262,9 +263,7 @@
     <Content Include="Views\Animal\AnimalInArea.cshtml" />
     <Content Include="Views\Area\AreaAndZoo.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Admins\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
@@ -278,7 +277,6 @@
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\_RemoveAccountPartial.cshtml" />
     <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
-    <Content Include="Views\Admin\AddStudent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201510151016170_InitailCreate.resx">
