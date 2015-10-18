@@ -216,6 +216,9 @@
     <Content Include="Images\3.jpg" />
     <Content Include="Images\bg-site.jpg" />
     <Content Include="Images\body-bg.jpg" />
+    <Content Include="Images\horse.jpg" />
+    <Content Include="Images\playing_area.jpg" />
+    <Content Include="Images\sea_horse.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />

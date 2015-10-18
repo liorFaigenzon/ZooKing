@@ -40,30 +40,30 @@ internal sealed class Configuration : DbMigrationsConfiguration<ZooKing.DAL.ZooK
 
         List<Animal> Animal = new List<Animal>
         {
-            new Animal{Name = "horse sea",
-                        Age=15},
-            new Animal{Name = "sea horse",
-                        Age=15
-                        }
+            new Animal{Name = "horse sea",Age=15, Type = "horse", Picture = "images/horse.jpg"},
+            new Animal{Name = "sea horse",Age=15, Type = "not horse",Picture = "images/sea_horse.jpg"}
         };
 
 
         List<Area> Area1 = new List<Area>
         {
             new Area{Size = 10,
-                        Name="kkk",
-                        Animals= Animal}
+                        Name="PlayingArea",
+                        Animals= Animal, Picture = "images/playing_area.jpg"}
         };
 
 
         context.Zoos.AddOrUpdate(
             p => p.ID,
-            new Zoo { Name = "Peter sea world",
-                    Addres = "אטלנטה",
-                    ShortInfo = "come and enjoy1",
-                    YearOfEstablishment = DateTime.Parse("2005-09-01"), 
-                    Areas = Area1}
+            new Zoo
+            {
+                Name = "Peter sea world",
+                Addres = "אטלנטה",
+                ShortInfo = "come and enjoy1",
+                YearOfEstablishment = DateTime.Parse("2005-09-01"),
+                Areas = Area1
+            }
         );
-            
+
     }
 }
