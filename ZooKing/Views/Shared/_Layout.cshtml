@@ -12,16 +12,16 @@
     @Scripts.Render("~/bundles/jqueryCycle")
     @Scripts.Render("~/bundles/jqueryOurs")
 </head>
-<body >
+<body onload="checkCookies()">
     <div id="container-wrapper2">
         <div id="container-wrapper">
             <div id="container">
                 <header>
-                    <div id="pictures" >
+                    <div id="pictures">
                         <div id="s1" class="pics">
-                            <img src="images/1.jpg"/>
-                            <img src="images/2.jpg"/>
-                            <img src="images/3.jpg"/>
+                            <img src="images/1.jpg" />
+                            <img src="images/2.jpg" />
+                            <img src="images/3.jpg" />
                         </div>
                         <div id="s2" class="pics">
                             <img src="images/1.jpg" />
@@ -88,10 +88,19 @@
                         </ul>
                     </nav>
                 </footer>
-                </div>
             </div>
-        </div>    
-        @Scripts.Render("~/bundles/jquery")
-        @RenderSection("scripts", required: false)
-        </body>
+        </div>
+    </div>
+    <script>
+        var userRole = '@User.IsInRole("Admins")';
+        if (userRole == "True") {
+            $('.Extra').css({ display: "normal" });
+        }
+        else {
+            $('.Extra').css({ display: "none" });
+        }
+    </script>
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
         </html>

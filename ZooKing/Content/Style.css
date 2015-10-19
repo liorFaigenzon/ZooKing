@@ -26,7 +26,7 @@ margin: auto;
 /**/
 @font-face {
     font-family: myFirstFont;
-    src: url(Sansation_Light.ttf);
+    src: url(AnkaCLM-Bold.otf);
 }
 
 div {
@@ -188,6 +188,7 @@ th{
     float:right;
 }
 
-/*col-md-offset-2 col-md-10{
-    float:right;
-}*/
+.col-md-offset-2 .col-md-10 {
+    float: right;
+}
+
