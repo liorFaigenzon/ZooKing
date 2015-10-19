@@ -28,15 +28,6 @@ $('#s4').cycle({
     random: 1
 });
 //--------------
-//function checkCookies() {
-//var userRole = '@User.IsInRole("Admins")';
-//if (userRole == "True") {
-//    $('.Extra').css({ display: "normal" });
-//}
-//else {
-//    $('.Extra').css({ display: "none" });
-//}};
-//--------------
 $(document).ready(function () {
     $("button").click(function () {
         $("img").animate({

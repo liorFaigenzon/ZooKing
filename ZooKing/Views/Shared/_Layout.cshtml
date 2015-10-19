@@ -110,6 +110,15 @@
                 </div>
             </div>
         </div>    
+    <script>
+    var userRole = '@User.IsInRole("Admins")';
+    if (userRole == "True") {
+        $('.Extra').css({ display: "normal" });
+    }
+    else {
+        $('.Extra').css({ display: "none" });
+    }
+    </script>
         @Scripts.Render("~/bundles/jquery")
         @RenderSection("scripts", required: false)
         </body>
