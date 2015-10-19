@@ -17,25 +17,17 @@ namespace ZooKing.Controllers
         private ZooKingContext db = new ZooKingContext();
 
         [AllowAnonymous]
-        public PartialViewResult GetAgeAvg()
-        {
-            var animals = db.Animals.Include(a => a.Area);
-
-            var avg = animals.Average(animal => animal.Age);
-
-            return PartialView(avg);
-        }
-
         public ActionResult avg()
         {
             int sum=0;
+            //string
             var animals = db.Animals.ToList();
             foreach (var animal in animals)
             {
                 sum += animal.Age;
             }
             sum = (sum / animals.Count);
-            return Json(new { data = sum }, JsonRequestBehavior.AllowGet);
+            return Json(new { avgHtml = sum }, JsonRequestBehavior.AllowGet);
         }  
 
         [AllowAnonymous]

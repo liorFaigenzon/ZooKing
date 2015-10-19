@@ -42,17 +42,18 @@ $(document).ready(function () {
     $("#btnAjax").click(function () {
         $.ajax({
             url: "/Animal/avg",
+            dataType: "json",
             success: successFunc,
             error: errorFunc
         });
         
 
         function successFunc(data, status) {
-            AvgShow.innerText =(data.data);
+          AvgShow.textContent= (data.avgHtml);
         }
 
         function errorFunc(data, status) {
-            alert('error' + data);
+            alert('error' + data.avgHtml);
         }
     });
 });

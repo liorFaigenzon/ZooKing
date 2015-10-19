@@ -7,8 +7,6 @@
 <h2>Index</h2>
 
 <div class="Extra" style="display:inline-block">
-    <p>
-
         @using (Html.BeginForm())
         {
         <p>
@@ -22,13 +20,13 @@
             @Html.ActionLink("קבץ", "GroupBy", 1 )  
         </p>
         }
-   
+    
     @Html.ActionLink("הוסף", "Create")
 </div>
-<p>
-    <input id="btnAjax" name="btnAjax" type="button" value="ממוצע גיל החיות" />
-    <div id="avg" style="background-color:red"> </div>
-</p>
+
+<input id="btnAjax" type="button" value="ממוצע גיל החיות" />
+<div id="avg" style="background-color:red"> </div>
+
     <table class="table">
         <tr>
             <th>
@@ -85,22 +83,4 @@
 
 
 
-@section Scripts {
-    <script>
-    $('#btnAjax').click(function () {
-        $.ajax({
-            url: '/Animal/GetAnimals',
-            contentType: 'application/html; charset=utf-8',
-            type: 'GET',
-            dataType: 'html'
 
-        })
-        .success(function (result) {
-            $('#avg').html(result);
-        })
-        .error(function (xhr, status) {
-            alert(status);
-        })
-    });
-    </script>
-}
