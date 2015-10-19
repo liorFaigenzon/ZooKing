@@ -12,7 +12,7 @@ using ZooKing.DAL;
 namespace ZooKing.Controllers
 {
     [Authorize(Roles = "Admins")]
-    public class AnimalController : Controller
+    public class ContactUsController : Controller
     {
         private ZooKingContext db = new ZooKingContext();
 
