@@ -16,16 +16,7 @@ namespace ZooKing.Controllers
     {
         private ZooKingContext db = new ZooKingContext();
 
-        [AllowAnonymous]
-        public PartialViewResult GetAgeAvg()
-        {
-            var animals = db.Animals.Include(a => a.Area);
-
-            var avg = animals.Average(animal => animal.Age);
-
-            return PartialView(avg);
-        }
-
+         [AllowAnonymous]
         public ActionResult avg()
         {
             int sum=0;
@@ -35,7 +26,7 @@ namespace ZooKing.Controllers
                 sum += animal.Age;
             }
             sum = (sum / animals.Count);
-            return Json(new { data = sum.ToString() }, JsonRequestBehavior.AllowGet);
+            return Json(new { avgHtml = sum }, JsonRequestBehavior.AllowGet);
         }  
 
         [AllowAnonymous]
