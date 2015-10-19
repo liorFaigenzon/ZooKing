@@ -10,16 +10,7 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jqueryCycle")
-    
-    <script>
-        $(document).ready(function () {
-            $("button").click(function () {
-                $("img").animate({
-                    height: 'toggle'
-                });
-            });
-        });
-    </script> 
+    @Scripts.Render("~/bundles/jqueryOurs")
 </head>
 <body >
     <div id="container-wrapper2">
@@ -79,31 +70,11 @@
                                 קישורים לאתרים
                                 קישורים לחארתה בארטה
                             </section>
-                            <iframe src='http://www.israelweather.co.il/weather_out.asp?code_width=250&height=200&code_color=white&code_font_color=black' width=250 height=200 dir=rtl name='in_frame' frameborder='1' scrolling='No'></iframe>
+                            <iframe src='http://www.israelweather.co.il/weather_out.asp?code_width=219&height=200&code_color=white&code_font_color=black' width=219 height=200 dir=rtl name='in_frame' frameborder='1' scrolling='No'></iframe>
                             <button>Change pictures Size</button>
                             <div id="transitionMan">
 
                             </div>
-
-                            <video src="~/Images/video.mp4" controls autoplay></video>
-
-                            <canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;">
-                                Your browser does not support the HTML5 canvas tag.
-                            </canvas>
-
-                            <script>
-                                var c = document.getElementById("myCanvas");
-                                var ctx = c.getContext("2d");
-
-                                // Create gradient
-                                var grd = ctx.createRadialGradient(75, 50, 5, 90, 60, 100);
-                                grd.addColorStop(0, "red");
-                                grd.addColorStop(1, "white");
-
-                                // Fill with gradient
-                                ctx.fillStyle = grd;
-                                ctx.fillRect(10, 10, 150, 80);
-                            </script>
                         </aside>
                     </main>
                 </div>
@@ -119,49 +90,7 @@
                 </footer>
                 </div>
             </div>
-        </div>
-    <script>
-        $('#s1').cycle({
-            fx: 'scrollDown',
-            speed: 3000,
-            timeout: 2000,
-            pause: 1,
-            random: 1
-        });
-        $('#s2').cycle({
-            fx: 'scrollDown',
-            speed: 2500,
-            timeout: 2000,
-            pause: 1,
-            random: 1
-        });
-        $('#s3').cycle({
-            fx: 'scrollDown',
-            speed: 2000,
-            timeout: 2000,
-            pause: 1,
-            random: 1
-        });
-        $('#s4').cycle({
-            fx: 'scrollDown',
-            speed: 3000,
-            timeout: 2000,
-            pause: 1,
-            random: 1
-        });
-   </script>
-    <script>
-        var userRole = '@User.IsInRole("Admins")';
-        if (userRole =="True") {
-            $('.Extra').css({ display: "normal" });
-        }
-        else
-        {
-            $('.Extra').css({ display:"none"});
-        }
-
-    </script>
-     
+        </div>    
         @Scripts.Render("~/bundles/jquery")
         @RenderSection("scripts", required: false)
         </body>
