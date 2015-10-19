@@ -19,6 +19,7 @@ namespace ZooKing.Models
 
         [DisplayName("שנת הקמה")]
         [Required]
+        [DataType(DataType.Date)]
         public DateTime YearOfEstablishment { get; set; }
 
         public virtual ICollection<Area> Areas { get; set; }
