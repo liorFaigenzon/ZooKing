@@ -12,16 +12,16 @@
     @Scripts.Render("~/bundles/jqueryCycle")
     @Scripts.Render("~/bundles/jqueryOurs")
 </head>
-<body onload="checkCookies()">
+<body >
     <div id="container-wrapper2">
         <div id="container-wrapper">
             <div id="container">
                 <header>
-                    <div id="pictures">
+                    <div id="pictures" >
                         <div id="s1" class="pics">
-                            <img src="images/1.jpg" />
-                            <img src="images/2.jpg" />
-                            <img src="images/3.jpg" />
+                            <img src="images/1.jpg"/>
+                            <img src="images/2.jpg"/>
+                            <img src="images/3.jpg"/>
                         </div>
                         <div id="s2" class="pics">
                             <img src="images/1.jpg" />
@@ -75,6 +75,25 @@
                             <div id="transitionMan">
 
                             </div>
+                            <video src="~/Images/video.mp4" controls autoplay></video>
+
+                            <canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;">
+                                Your browser does not support the HTML5 canvas tag.
+                            </canvas>
+
+                            <script>
+                                var c = document.getElementById("myCanvas");
+                                var ctx = c.getContext("2d");
+
+                                // Create gradient
+                                var grd = ctx.createRadialGradient(75, 50, 5, 90, 60, 100);
+                                grd.addColorStop(0, "red");
+                                grd.addColorStop(1, "white");
+
+                                // Fill with gradient
+                                ctx.fillStyle = grd;
+                                ctx.fillRect(10, 10, 150, 80);
+                            </script>
                         </aside>
                     </main>
                 </div>
@@ -88,19 +107,10 @@
                         </ul>
                     </nav>
                 </footer>
+                </div>
             </div>
-        </div>
-    </div>
-    <script>
-        var userRole = '@User.IsInRole("Admins")';
-        if (userRole == "True") {
-            $('.Extra').css({ display: "normal" });
-        }
-        else {
-            $('.Extra').css({ display: "none" });
-        }
-    </script>
-    @Scripts.Render("~/bundles/jquery")
-    @RenderSection("scripts", required: false)
-</body>
+        </div>    
+        @Scripts.Render("~/bundles/jquery")
+        @RenderSection("scripts", required: false)
+        </body>
         </html>

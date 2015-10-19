@@ -219,6 +219,7 @@
     <Content Include="Images\horse.jpg" />
     <Content Include="Images\playing_area.jpg" />
     <Content Include="Images\sea_horse.jpg" />
+    <Content Include="Images\video.mp4" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\Sansation_Light.ttf" />
