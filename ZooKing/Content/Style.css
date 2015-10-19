@@ -188,7 +188,7 @@ th{
     float:right;
 }
 
-.col-md-offset-2 .col-md-10 {
+.col-md-offset-2.col-md-10 {
     float: right;
 }
 

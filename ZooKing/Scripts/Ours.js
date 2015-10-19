@@ -36,3 +36,23 @@ $(document).ready(function () {
     });
 });
 
+$(document).ready(function () {
+    var AvgShow = (document.getElementById("avg"));
+
+    $("#btnAjax").click(function () {
+        $.ajax({
+            url: "/Animal/avg",
+            success: successFunc,
+            error: errorFunc
+        });
+        
+
+        function successFunc(data, status) {
+            AvgShow.innerText =(data.data);
+        }
+
+        function errorFunc(data, status) {
+            alert('error' + data);
+        }
+    });
+});

@@ -26,6 +26,18 @@ namespace ZooKing.Controllers
             return PartialView(avg);
         }
 
+        public ActionResult avg()
+        {
+            int sum=0;
+            var animals = db.Animals.ToList();
+            foreach (var animal in animals)
+            {
+                sum += animal.Age;
+            }
+            sum = (sum / animals.Count);
+            return Json(new { data = sum }, JsonRequestBehavior.AllowGet);
+        }  
+
         [AllowAnonymous]
         public PartialViewResult GetAnimals()
         {

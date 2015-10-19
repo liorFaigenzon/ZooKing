@@ -12,9 +12,9 @@
         @using (Html.BeginForm())
         {
         <p>
-            Age: @Html.TextBox("age") <br />
-            Type: @Html.TextBox("Type") <br />
-            Name: @Html.TextBox("Name") <br />
+            גיל: @Html.TextBox("age") <br />
+            סוג: @Html.TextBox("Type") <br />
+            שם:  @Html.TextBox("Name") <br />
             <br />
             <input type="submit" value="Filter" />
 
@@ -22,14 +22,13 @@
             @Html.ActionLink("קבץ", "GroupBy", 1 )  
         </p>
         }
-    <p>
-    @Html.ActionLink("Create New", "Create")
-    <input id="btnAjax" name="btnAjax" type="button" value="Get Avg" />
-    <div id="avg"></div>
-
-
-     </p>
-    </div>
+   
+    @Html.ActionLink("הוסף", "Create")
+</div>
+<p>
+    <input id="btnAjax" name="btnAjax" type="button" value="ממוצע גיל החיות" />
+    <div id="avg" style="background-color:red"> </div>
+</p>
     <table class="table">
         <tr>
             <th>
